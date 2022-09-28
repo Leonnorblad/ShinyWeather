@@ -1,8 +1,12 @@
+# Setup ####
 library(shiny)
 library(devtools)
-#install_github("leonnorblad/Weather4cats")
 library(Weather4cats)
-# Function to render plot
+library(stringr)
+library(lubridate)
+library(ggplot2)
+
+# Function to render plot ####
 render_plot <- function(city, date, W_variable){
   
   # Creates global variables
@@ -76,7 +80,7 @@ render_plot <- function(city, date, W_variable){
   return(plot)
 }
 
-# The app 
+# The app ####
 ui <- fluidPage(
   selectInput("area", label = "Area", choices = c("Link\u00f6ping", "Stockholm", "Uppsala", "Malm\u00f6", "G\u00f6teborg")),
   selectInput("var", label = "Variable", choices = c("Temperature", "Humidity", "Cloudcover", "Precipitation", "Wind speed")),
