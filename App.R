@@ -71,6 +71,7 @@ render_plot <- function(city, date, W_variable){
   }
   return(plot)
 }
+
 # The app 
 ui <- fluidPage(
   selectInput("area", label = "Area", choices = c("Link\u00f6ping", "Stockholm", "Uppsala", "Malm\u00f6", "G\u00f6teborg")),
@@ -80,7 +81,6 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
-  
   output$plot <- renderPlot({render_plot(city = input$area, date = input$date, W_variable = input$var)
   })
 }
