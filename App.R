@@ -6,11 +6,10 @@ library(stringr)
 library(lubridate)
 library(ggplot2)
 
+
 # Function to render plot ####
 render_plot <- function(city, date, W_variable){
   
-  # Creates global variables
-  time <- Time <- Temperature <- Humidity <- Precipitation <- Cloudcover <- Wind_speed <- Wind_direction <- City <- NULL
   # API data
   data <- get_weather_forecast(city = city, date=date)
   
