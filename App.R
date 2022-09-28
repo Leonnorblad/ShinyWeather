@@ -1,6 +1,7 @@
 library(shiny)
 library(devtools)
-install_github("leonnorblad/Weather4cats")
+#install_github("leonnorblad/Weather4cats")
+library(Weather4cats)
 # Function to render plot
 render_plot <- function(city, date, W_variable){
   
