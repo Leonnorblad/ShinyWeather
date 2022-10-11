@@ -1,5 +1,5 @@
 # Setup ####
-library(shiny)
+library("shiny")
 library("Weather4cats")
 
 # Function to render plot ####
