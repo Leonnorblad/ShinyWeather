@@ -33,15 +33,15 @@ render_plot <- function(city, date, W_variable){
   # Bar plot
   if(W_variable=="Precipitation"){
     plot <- ggplot2::ggplot(data=data, ggplot2::aes_string(x="time", y=W_variable, group = 1)) +
-      geom_bar(stat='identity') +
-      scale_y_continuous(expand = c(0, 0)) +
+      ggplot2::geom_bar(stat='identity') +
+      ggplot2::scale_y_continuous(expand = c(0, 0)) +
       ggplot2::labs(y="Precipitation (mm)")
   }
   # Vector plot
   if(W_variable=="Wind speed"){
-    plot <- ggplot2::ggplot(data=data, aes(x=time, y=Wind_speed)) +
-      geom_text(aes(angle=-Wind_direction+90), label="-->", size=6) +
-      geom_point(size=2) + ggplot2::labs(y="Wind speed (m/s)")
+    plot <- ggplot2::ggplot(data=data, ggplot2::aes(x=time, y=Wind_speed)) +
+      ggplot2::geom_text(ggplot2::aes(angle=-Wind_direction+90), label="-->", size=6) +
+      ggplot2::geom_point(size=2) + ggplot2::labs(y="Wind speed (m/s)")
   }
   
   # Change y-labs
@@ -69,7 +69,7 @@ render_plot <- function(city, date, W_variable){
   
   # Change the scale for the variables in % from 0 to 100
   if(any("Humidity"==W_variable, "Cloudcover"==W_variable)){
-    plot <- plot + scale_y_continuous(limits=c(0,100))
+    plot <- plot + ggplot2::scale_y_continuous(limits=c(0,100))
   }
   return(plot)
 }
