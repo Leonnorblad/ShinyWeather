@@ -21,7 +21,7 @@ render_plot <- function(city, date, W_variable){
   title <- paste0(W_variable, ", ", data$City[1])
   
   # construct the subtitle
-  subtitle <- paste0(day(date_of_day)," ", str_to_title(month(date_of_day, label = TRUE, abbr=FALSE), ","), " ", year(date_of_day))[1]
+  subtitle <- paste0(lubridate::day(date_of_day)," ", str_to_title(month(date_of_day, label = TRUE, abbr=FALSE), ","), " ", year(date_of_day))[1]
   
   # Line plots
   if (any(c("Temperature"==W_variable,
