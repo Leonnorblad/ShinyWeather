@@ -1,11 +1,6 @@
 # Setup ####
 library(shiny)
-library(devtools)
 library(Weather4cats)
-library(stringr)
-library(lubridate)
-library(ggplot2)
-
 
 # Function to render plot ####
 render_plot <- function(city, date, W_variable){
